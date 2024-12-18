@@ -26,7 +26,7 @@ fun <P, R> solve(
     solution: Solution<P, R>,
 ) =
     solve(
-        inputSrc = "y$year/day${day.toString().padStart(2, '0')}input.txt",
+        inputSrc = "/y$year/day${day.toString().padStart(2, '0')}input.txt",
         params,
         solution,
     ).also {
@@ -45,3 +45,6 @@ fun <R> solve(
     params = null,
     solution = solution,
 )
+
+fun SolutionRunner<*>.inputAsLine() =
+    input.joinToString("")
