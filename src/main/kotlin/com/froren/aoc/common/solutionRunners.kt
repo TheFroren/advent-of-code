@@ -32,3 +32,16 @@ fun <P, R> solve(
     ).also {
         println("Year $year day $day part $part result is $it")
     }
+
+fun <R> solve(
+    year: Int,
+    day: Int,
+    part: Int,
+    solution: Solution<*, R>,
+) = solve(
+    year = year,
+    day = day,
+    part = part,
+    params = null,
+    solution = solution,
+)
