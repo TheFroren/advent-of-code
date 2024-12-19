@@ -45,3 +45,11 @@ private fun <T> MutableList<T>.swap(i: Int, j: Int) {
     this[i] = this[j]
     this[j] = temp
 }
+
+fun <K,V : Any> Sequence<Pair<K,V>>.mergeToMap(merge: (V, V) -> V): Map<K,V> {
+    val map = mutableMapOf<K,V>()
+    forEach {
+        map.merge(it.first, it.second, merge)
+    }
+    return map
+}
