@@ -8,11 +8,13 @@ fun <T> Pair<T, T>.asSequence() = sequence {
 fun <T> Iterable<IndexedValue<T>>.asValueSequence() =
     this.asSequence().map { it.value }
 
+/**
+ * ChatGPT claims that this is Heap's algorithm.
+ */
 fun <T> Collection<T>.permutations() = sequence<List<T>> {
     if (isEmpty())
         yield(emptyList())
 
-    val indices = indices.toMutableList()
     val currentPermutation = toMutableList()
     val stack = IntArray(size) { 0 }
 
