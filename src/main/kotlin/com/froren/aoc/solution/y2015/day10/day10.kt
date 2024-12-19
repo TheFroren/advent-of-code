@@ -1,7 +1,6 @@
 package com.froren.aoc.solution.y2015.day10
 
 import com.froren.aoc.common.inputAsLine
-import com.froren.aoc.common.iteration.permutations
 import com.froren.aoc.common.solve
 
 fun main() {
