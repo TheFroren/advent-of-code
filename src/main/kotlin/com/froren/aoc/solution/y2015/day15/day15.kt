@@ -2,8 +2,6 @@ package com.froren.aoc.solution.y2015.day15
 
 import com.froren.aoc.common.solve
 import kotlin.math.max
-import kotlin.math.min
-import kotlin.time.Duration.Companion.seconds
 
 fun main() {
     solve(
