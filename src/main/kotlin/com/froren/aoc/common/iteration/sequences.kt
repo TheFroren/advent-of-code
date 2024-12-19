@@ -46,6 +46,33 @@ private fun <T> MutableList<T>.swap(i: Int, j: Int) {
     this[j] = temp
 }
 
+fun <T> List<T>.combinations(r: Int) = sequence {
+    if (r > size || r < 0)
+        return@sequence
+
+    val indices = IntArray(r) { it }
+
+    yield(indices.map { this@combinations[it] })
+
+    while (true) {
+        var i = r - 1
+        while (i >= 0 && indices[i] == i + size - r) {
+            i--
+        }
+
+        if (i < 0) break // No more combinations
+
+        indices[i]++ // Increment this index
+        for (j in (i + 1) until r) {
+            indices[j] = indices[j - 1] + 1
+        }
+
+        yield(indices.map { this@combinations[it] })
+    }
+}
+
+fun <T> List<T>.combinations() = this.combinations(size)
+
 fun <K,V : Any> Sequence<Pair<K,V>>.mergeToMap(merge: (V, V) -> V): Map<K,V> {
     val map = mutableMapOf<K,V>()
     forEach {
