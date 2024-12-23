@@ -10,7 +10,7 @@ enum class Dir(x: Int, y: Int) {
 }
 
 fun Dir.turnCW(amount: Int) =
-    Dir.entries[(this.ordinal + (amount % 4)) % 4]
+    Dir.entries[(this.ordinal + (Math.floorMod(amount, 4))) % 4]
 
 operator fun Vector.plus(dir: Dir) =
     this + dir.v

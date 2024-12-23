@@ -14,5 +14,8 @@ operator fun Vector.minus(other: Vector) =
 operator fun Vector.times(factor: Int) =
     Vector(x*factor, y*factor)
 
+operator fun Int.times(v: Vector) =
+    Vector(v.x*this, v.y*this)
+
 operator fun Area.contains(vector: Vector) =
     vector.x in xBounds && vector.y in yBounds
