@@ -30,7 +30,7 @@ fun main() {
     solve(
         year = 2016,
         day = 6,
-        part = 1
+        part = 2
     ) {
         val words = input.toList()
 
