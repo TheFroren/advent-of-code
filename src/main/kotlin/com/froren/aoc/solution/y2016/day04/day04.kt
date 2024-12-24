@@ -24,7 +24,7 @@ fun main() {
     solve(
         year = 2016,
         day = 4,
-        part = 1
+        part = 2
     ) {
         input
             .getIdAndHash()
