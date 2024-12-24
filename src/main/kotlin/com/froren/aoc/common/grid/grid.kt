@@ -13,3 +13,12 @@ fun <T> MutableGrid(width: Int, height: Int, default: (Int, Int) -> T) =
             default(x,y)
         }
     }
+
+fun <T> Grid<T>.println(displayMapping: (T) -> Char) {
+    forEach {
+        it.forEach {
+            print(displayMapping(it))
+        }
+        println()
+    }
+}
